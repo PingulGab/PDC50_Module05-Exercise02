@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module07DataAccess.View.ViewPersonal"
+             Title="ViewPersonal"
+             Shell.NavBarIsVisible="False"
+             Shell.BackgroundColor="#e8e8e8">
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+
+        <Label Text="Personal Information"
+               FontSize="20"
+               HorizontalOptions="Center"/>
+
+        <ListView ItemsSource="{Binding EmployeeList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Vertical">
+                                <!-- Label for Full Name -->
+                                <Label Text="{Binding Name}"
+                                       FontSize="21"
+                                       FontAttributes="Bold"/>
+
+                                <!-- Label for Position -->
+                                <Label FontSize="14">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Position: " FontAttributes="Bold" TextColor="Gray"/>
+                                            <Span Text="{Binding Address}"
+                                                  TextColor="Gray"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <!-- Label for Department -->
+                                <Label FontSize="14">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Department: " FontAttributes="Bold" TextColor="Gray"/>
+                                            <Span Text="{Binding ContactNo}"
+                                                  TextColor="Gray"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <!-- Separator -->
+                                <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label x:Name="ConnectionStatusLabel"
+               Text="{Binding StatusMessage}"
+               FontSize="18"
+               Margin="0, 20, 0, 0"
+               HorizontalOptions="Center"/>
+        
+        <Button Text="Load Data"
+                Command="{Binding LoadDataCommand}"
+                WidthRequest="500"
+                BackgroundColor="DodgerBlue"
+                HorizontalOptions="Center"/>
+
+        <Button Text="View Main Page"
+                Clicked="OnViewMainPageClicked"
+                WidthRequest="500"
+                BackgroundColor="BlueViolet"
+                HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>

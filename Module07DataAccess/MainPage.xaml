@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module07DataAccess.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#e8e8e8">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center">
+            
+            <Image
+                Source="employees.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                Margin="0, 0, 0, 0"
+                SemanticProperties.Description="Warehouse with Purple-Violet Gradient." />
+
+            <!-- &#10; -->
+            
+            <Label
+                Text="Welcome to the Employee App!"
+                FontSize="30"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"/>
+
+            <!-- <Label x:Name="ConnectionStatusLabel"
+                   Text=""
+                   FontSize="18"
+                   HorizontalOptions="Center"/> -->
+
+            <Button Text="Go to Employee Page"
+                    Clicked="OnViewEmployeePageClicked"
+                    WidthRequest="200"
+                    Margin="0, 20, 0,0 "
+                    FontAttributes="Bold"
+                    FontSize="14"
+                    BackgroundColor="Maroon"
+                    HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
